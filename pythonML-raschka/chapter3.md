@@ -128,4 +128,19 @@ Logistic regression and SVM often yield to similar results, but logistic regress
 ### SOLVING NON-LINEAR PROBLEMS USING KERNEL SVM
 SVM can be easily kernelized. The idea behind kernels is to create nonlinear combinations of the original features and project them onto higher dimensional space where they become linearly separable
 One problem with this approach is that transforming the features into high dimensional ones is very computationally expensive.
+{% method -%}
+## Install {#install}
+
+The first thing is to get the GitBook API client.
+
+{% sample lang="js" -%}
+```bash
+$ npm install gitbook-api
+```
+
+{% sample lang="go" -%}
+```bash
+$ go get github.com/GitbookIO/go-gitbook-api
+```
+{% endmethod %}
 [pdf page 102]
