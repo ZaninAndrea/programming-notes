@@ -1,9 +1,11 @@
 - You an use an online IDE at [cs50.io](cs50.io)
 - On the ide you can use the cs50 library for many abstractions (string, get_int,...) while you are still learning, later on you'll implement them yourself
+
 ```c
 #include <cs50.h>
 ```
 - to print a string containing a varibale you can use this syntax
+
 ```c
 printf("here is some text and then a variable: text %s %i", stringVariable, intVariable);
 ```
@@ -25,6 +27,7 @@ Here is a handy table of the %-words and meaning of the type:
 - when yourun out of space to store value in a number-type variable it will overflow (numbers will not be counted as expected and bugs will happen)
 - the computer can be imprecise in representing numbers, for example in base 10 the number $$\frac{1}{3}$$ is not representable in a finite amount of digits, similarly in base 2 the number $$\frac{1}{10}$$ can't be represented in a finite amount of digits
 - a function has to be declared before you can invoke it, sometimes it can be useful  to declarate the function at the top of the code and implementit later like this
+
 ```c
 #include <stdio.h>
 #include <cs50.h>
@@ -40,12 +43,17 @@ void print_name(string name){
     printf("hello %s\n", name);    
 }
 ```
+
 - a function that takes no argument has to be declaared with void as argument
-```
+
+```c
 int return3(void){
     return 3;
 }
 ```
-
-
+- steps took by the pc to go from source code to running problam:
+    - preprocessing: run preprocessing commands (like `#include <stdio.h>` to copy and paste the content of *stdio.h* in that point ofthe code)
+    - compiling: from source code to assembly
+    - assemble: from assembly to binary
+    - linking: replacing methods with their implementation?
 
