@@ -41,24 +41,33 @@ $$
 \phi(z)=\frac{1}{1+e^{-z}}
 $$
 Where z is the net input (dot product of features and weights)
+
 ![sigmoid graph](https://i.imgur.com/hXFKiH6.png)
+
 Above is the graph of the sigmoid. So the sigmoid takes an input in the real number range and gives an output in the [0,1] range
 Schema of the logistic regression fitting
+
 ![schema of logistic regression](https://i.imgur.com/pmsKJDG.png)
+
 The quantizer will simply check whether the sigmoid function's output is greater or equal to 0.5
 The great thing about the sigmoid function is that it not only predicts the class, but also gives us the probability of it being in that class. This is why it's widely used in medicine.
 After some math, we found out that the cost function J of the logistic regression is 
 $$
 J(w)=\sum_{i=1}^{n}{-log(\phi (z^{(i)}))-(1-y^{(i)}\log{(1-\phi (z^{(i)})})}
 $$
-Which plots to this for a single-sample instance. Remember that y is the correct class![plot for single instance](https://i.imgur.com/q2pfPRu.png)
+Which plots to this for a single-sample instance. Remember that y is the correct class
+
+![plot for single instance](https://i.imgur.com/q2pfPRu.png)
+
 As you can see the cost approaches 0 if we correctly predict the class, but if the prediction is wrong it goes to infinity. This means that we penalize wrong predictions with an increasingly larger cost.
 The logistic regression model works as the adaline, but with this different cost function.
 With logistic regression model in sklearn we have an additional method called predict_proba that returns the probability of the element being part of any of the possible classes
 ### TACKLING OVERFITTING VIA REGULARIZATION
 When your model is overfitting (performs well on the training set, but not on the test set), we say that it has high variance, which can be caused by having too many parameters and therefore too complex model
 A model suffers of underfitting when it doesn't capture the complexity of the model
+
 ![underfitting and overfitting](https://i.imgur.com/Sj42YTq.png)
+
 Variance is a measure of how much the model is sensitive to the randomness of the training data. (randomic error)
 Bias is a measure of how far off the prediction are from the correct values. (systematic error)
 To find a balance between bias and variance we can use regularization, that is a useful method to deal with collinearity (features that are highly correlated), filter out noise, prevent overfitting.
@@ -71,10 +80,15 @@ To apply the regularization we hav to add it in the cost function like so
 $$
 J(w)=C[\sum_{i=1}^{n}{(-\log{(\phi (z^{(i)})}) +(1-y^{(i)})) (-\log{(1-\phi (z^{(i)}))})}]+\frac{\lambda}{2}||w||^2
 $$
-A graph showing how weight coefficients and regularization are related: reducing the C coefficient(increasing regularization) we reduce the coefficients![regularization graph](https://i.imgur.com/TmaLWdJ.png)
+A graph showing how weight coefficients and regularization are related: reducing the C coefficient(increasing regularization) we reduce the coefficients
+
+![regularization graph](https://i.imgur.com/TmaLWdJ.png)
+
 #### MAXIMUM MARGIN CLASSIFICATION WITH SUPPORT VECTOR MACHINES (SVM)
 The Perceptron rule's goal was to minimize the missclassification, instead the SVM goal is to maximize margin, that is the distance between the decision boundary and the closest samples
+
 ![SVM margin](https://i.imgur.com/qWURMDo.png)
+
 higher margin generally means less overfitting
 To get an intuition for the margin maximization, let's take a closer look at those *positive* and *negative* hyperplanes that are parallel to the decision boundary, which can be expressed as follows:
 $$
@@ -104,7 +118,9 @@ In practice it's easier minimizing the reciprocal term $\frac{1}{2}||w||^2$, tha
 In the non linearly separable case linear constraints need to be relaxed in order to allow for convergence. So it was introduced the slack variable $\xi$ 
 We add it in the linear constraints
 We can use the variable C to tune the bias-variance trade-off
+
 ![bias variance tradeoff](https://i.imgur.com/gKDN2Gp.png)
+
 #### LOGISTIC REGRESSION VERSUS SVM
 Logistic regression and SVM often yield to similar results, but logistic regression is easier to update (for example when working with streaming data), whereas SVM is less prone to errors
 > for more optimized algorithms use liblinear and libsvm
