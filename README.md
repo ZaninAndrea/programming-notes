@@ -1,3 +1,5 @@
-# My Awesome API
+# Python Machine Learning - Sebastian Raschka
+Those notes are meant to be read while tinkering with the code
+iPython notebooks can be found [here](https://github.com/rasbt/python-machine-learning-book)
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+
