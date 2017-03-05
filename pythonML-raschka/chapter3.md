@@ -133,9 +133,4 @@ One problem with this approach is that transforming the features into high dimen
 
 The first thing is to get the GitBook API client.
 
-{% sample lang="python" -%}
-```bash
-$ npm install gitbook-api
-```
-{% endmethod %}
 [pdf page 102]
