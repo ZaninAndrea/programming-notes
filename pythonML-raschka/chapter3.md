@@ -7,7 +7,7 @@
 No algorithm is perfect for every scenario, you'll likely have to test a handful of them to find the best one. Efficency of the various algorithms depends on number of features/samples, noise, whether the classes are linearly separable or not
 
 ### STEPS FOR TRAINING AN ALGORITHM
--Selection of features
+- Selection of features
 - Choosing a performance metric
 - Choosing a classifier and an optimization algorithm
 - Evaluating the performance
