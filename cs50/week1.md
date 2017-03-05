@@ -24,3 +24,28 @@ Here is a handy table of the %-words and meaning of the type:
 - you can get the size of a variable through the method `sizeof(type)`
 - when yourun out of space to store value in a number-type variable it will overflow (numbers will not be counted as expected and bugs will happen)
 - the computer can be imprecise in representing numbers, for example in base 10 the number $$\frac{1}{3}$$ is not representable in a finite amount of digits, similarly in base 2 the number $$\frac{1}{10}$$ can't be represented in a finite amount of digits
+- a function has to be declared before you can invoke it, sometimes it can be useful  to declarate the function at the top of the code and implementit later like this
+```c
+#include <stdio.h>
+#include <cs50.h>
+
+void print_name(string name);
+
+int main(void){
+    string s = get_string()
+    print_name(s);
+}
+
+void print_name(string name){
+    printf("hello %s\n", name);    
+}
+```
+- a function that takes no argument has to be declaared with void as argument
+```
+int return3(void){
+    return 3;
+}
+```
+
+
+
