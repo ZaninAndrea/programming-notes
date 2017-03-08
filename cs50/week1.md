@@ -59,3 +59,21 @@ int return3(void){
     - compiling: from source code to assembly
     - assemble: from assembly to binary
     - linking: replacing methods with their implementation?
+
+## Short: Command Line
+- commands:
+    - **ls**: lists the files in the current directory. Files marked with * are executables
+    - **cd *destination***: change directory to the one passed e.g. `cd pset1`
+        - `.` is the current directory
+        - `..` is the upper directory
+        - `~` for absolute path
+    - **pwd** returns the name of the current directory
+    - **mkdir *name***: create a new directory e.g. `mkdir workspace/newfolder`
+    - **cp *source* *destination***:  copy sourcefile to destination
+        - destination can both be a directory or a file, if it's a directory and you are copying a file the file will have the same name as source
+        - use flag `-r` to copy a folder
+    - **rm *file***: to remove a file
+        - use flag `-f` to avoid making the warn appear
+        - use flag `-r` to remove a directory
+    - **mv *origin* *destination* **: to move or rename a file/directory
+    - other commmands to explore: chmod, ln, touch, rmdir, man, diff, sudo, clear, telnet
