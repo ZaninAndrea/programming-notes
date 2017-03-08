@@ -1,3 +1,6 @@
+# Week 1
+<!-- toc -->
+## Lecture
 - You an use an online IDE at [cs50.io](cs50.io)
 - On the ide you can use the cs50 library for many abstractions (string, get_int,...) while you are still learning, later on you'll implement them yourself
 
@@ -56,4 +59,3 @@ int return3(void){
     - compiling: from source code to assembly
     - assemble: from assembly to binary
     - linking: replacing methods with their implementation?
-

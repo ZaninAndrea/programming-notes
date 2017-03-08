@@ -1,16 +1,3 @@
 {
-    "plugins": [ "theme-api", "mathjax" ],
-    "pluginsConfig": {
-        "theme-api": {
-            "languages": [
-                {
-                    "lang": "python",
-                    "name": "Python",
-                    "default": true
-                }
-            ],
-            "split": true,
-            "theme" : "dark"
-        }
-    }
+    "plugins": ["mathjax", "toc"]
 }
