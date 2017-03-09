@@ -48,7 +48,6 @@ void print_name(string name){
 ```
 
 - a function that takes no argument has to be declaared with void as argument
-
 ```c
 int return3(void){
     return 3;
@@ -113,15 +112,12 @@ int return3(void){
 ## Conditional statements
 - used to make decisions that take a fork in the road of your program
 - if statement
-
-```
+```c
 if(boolean expression)
     {to execute}
 ```
-
 - if-else statement
-
-```
+```c
 if(boolean expression){
     if execute
 }
@@ -133,7 +129,7 @@ else
 - or use the ternary operator `variable = (expression) ? valueForTrue : valueForFalse;`
 - switch statement
 
-```
+```c
 switch(variable){
     case value1:
         code for value1
@@ -152,3 +148,16 @@ switch(variable){
 }
 ```
 
+## Short: Loops
+- while
+```c
+while (condition){
+    code
+}
+```
+- for
+```c
+for (start; condition; increment){
+    code
+}
+```
