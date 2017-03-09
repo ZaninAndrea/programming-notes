@@ -109,3 +109,46 @@ int return3(void){
         - `>`,`<`,`>=`,`<=`: great than, less than, greater or equal, less or equal
         - `==`: equality operator
         - `!=`: inequality operator
+        
+## Conditional statements
+- used to make decisions that take a fork in the road of your program
+- if statement
+
+```
+if(boolean expression)
+    {to execute}
+```
+
+- if-else statement
+
+```
+if(boolean expression){
+    if execute
+}
+else
+{
+    else execute
+}
+```
+- or use the ternary operator `variable = (expression) ? valueForTrue : valueForFalse;`
+- switch statement
+
+```
+switch(variable){
+    case value1:
+        code for value1
+        break;
+    case value2:
+        code for value2
+        break;
+    case value3
+        code for value3
+    case value4
+        code for value3 and value4
+        break;
+    deafult:
+        for everything else
+        break;
+}
+```
+
