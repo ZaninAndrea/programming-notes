@@ -77,3 +77,21 @@ int return3(void){
         - use flag `-r` to remove a directory
     - **mv *origin* *destination* **: to move or rename a file/directory
     - other commmands to explore: chmod, ln, touch, rmdir, man, diff, sudo, clear, telnet
+    
+## Short: Data Types
+- you need to specify the data type
+- types:
+    - **int**: integer values, both positive and negative. It holds 32 bits: 1 bit for the sign and 31 bits for the number
+    - ***unsigned* int**: uses all the 32 bits for the number
+    - **chars**: holds a single character in the ascii standard
+    - **float**: real numbers. Holds 32 bits. **Float has imprecision problems**
+    - **double**: real numbers. Holds 64 bits, which means less imprecision
+    - **void**: you can't create a variable of type void, but function can return *void*, whihc means that it doesn't return anything.
+    - **bool**: holds a boolean value, but it's not included in c, you can include it with the class `<cs50.h>`
+    - **string**: holds strings
+- using variables:
+    - declaration `type name;` or `type name1, name2, name3;` 
+    - assignement `name = value;`
+    - initialization `type name = value;`
+- create variables when you need them, not all at start
+- later on we'll learn about structures, that allow you to bundle multiple values in a type
