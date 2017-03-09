@@ -87,7 +87,7 @@ int return3(void){
     - **float**: real numbers. Holds 32 bits. **Float has imprecision problems**
     - **double**: real numbers. Holds 64 bits, which means less imprecision
     - **void**: you can't create a variable of type void, but function can return *void*, whihc means that it doesn't return anything.
-    - **bool**: holds a boolean value, but it's not included in c, you can include it with the class `<cs50.h>`
+    - **bool**: holds a boolean value, but it's not included in c, you can include it with the class `<cs50.h>`. In pure c every non-zero value is true
     - **string**: holds strings
 - using variables:
     - declaration `type name;` or `type name1, name2, name3;` 
@@ -97,3 +97,15 @@ int return3(void){
 - later on we'll learn about structures, that allow you to bundle multiple values in a type
 
 ## Short: operators
+- arithmetic operator `+`, `-`, `*`, `/`, `%` (modulus), `+`
+    - shorter ways `x = x * 5;` = `x*=5;`
+    - shorter shorter way `x = x + 1;` = `x+=1;` = `x++;`  
+- boolean operators
+    - logical
+        - `&&`: the and operator
+        - `||`: the or operator
+        - `!`: the not operator
+    - relational
+        - `>`,`<`,`>=`,`<=`: great than, less than, greater or equal, less or equal
+        - `==`: equality operator
+        - `!=`: inequality operator
