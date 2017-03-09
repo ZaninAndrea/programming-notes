@@ -95,3 +95,5 @@ int return3(void){
     - initialization `type name = value;`
 - create variables when you need them, not all at start
 - later on we'll learn about structures, that allow you to bundle multiple values in a type
+
+## Short: operators
