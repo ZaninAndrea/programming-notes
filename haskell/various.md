@@ -32,7 +32,7 @@
   factorial 100
   ```
 * type `Ordering` is a type that can have value `LT`,`GT`,`EQ` meaning greater than, lesser than and equal, respectively
-
+* to write multiple expressions in the same line separate them with `;`
 ## Lists
 * contain items of the same type
 * strings are lists
@@ -90,5 +90,75 @@ Tuples are similar to lists, but their type depends on the number and the type o
   * typeclass `Floating` includes every type that can act as a floating point number: `Float` and `Double`
 
 ## Cool syntaxes
+### pattern matching
+You can define a function behaviour for a specific input e.g.
+```haskell
+lucky :: (Integral a) => a -> String  
+lucky 7 = "LUCKY NUMBER SEVEN!"  
+lucky x = "Sorry, you're out of luck, pal!"   
+```
+- only the first declaration matching is executed, similarly to a switch statement
+- always include a chatch-all statement, otherwise the function will crash for unexpected inputs
+- this can also work for recursive functions
+```haskell
+factorial :: (Integral a) => a -> a  
+factorial 0 = 1  
+factorial n = n * factorial (n - 1)  
+```
+- patterns: Those are a handy way of breaking something up according to a pattern and binding it to names whilst still keeping a reference to the whole thing. You do that by putting a name and an `@` in front of a pattern. For instance, the pattern `xs@(x:y:ys)`. This pattern will match exactly the same thing as `x:y:ys` but you can easily get the whole list via `xs` instead of repeating yourself by typing out `x:y:ys` in the function body again. E.g. 
+```haskell 
+capital :: String -> String  
+capital "" = "Empty string, whoops!"  
+capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]  
+```
+### guards
+Guards are a way of testing whether some property of a value (or several of them) are true or false e.g.
+```haskell
+bmiTell :: (RealFloat a) => a -> String  
+bmiTell bmi  
+    | bmi <= 18.5 = "You're underweight, you emo, you!"  
+    | bmi <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"  
+    | bmi <= 30.0 = "You're fat! Lose some weight, fatty!"  
+    | otherwise   = "You're a whale, congratulations!"  
+```
+Guards are indicated by pipes that follow a function's name and its parameters. If it evaluates to True, then the corresponding function body is used. If it evaluates to False, checking drops through to the next guard and so on
+We can use the keyword `where` after the guards to calculate some variables or functions used in the guards or in the function. In defining those variables you must indent all of them equally e.g.
+```haskell
+    bmiTell :: (RealFloat a) => a -> a -> String  
+    bmiTell weight height  
+        | bmi <= skinny = "You're underweight, you emo, you!"  
+        | bmi <= normal = "You're supposedly normal. Pffft, I bet you're ugly!"  
+        | bmi <= fat    = "You're fat! Lose some weight, fatty!"  
+        | otherwise     = "You're a whale, congratulations!"  
+        where bmi = weight / height ^ 2  
+              skinny = 18.5  
+              normal = 25.0  
+              fat = 30.0  
+```
 
+### Let bindings
+The form is `let <bindings> in <expression>`. The names that you define in the let part are accessible to the expression after the in part. Let bindings are expressions themselves. E.g.
+```haskell
+cylinder :: (RealFloat a) => a -> a -> a  
+cylinder r h = 
+    let sideArea = 2 * pi * r * h  
+        topArea = pi * r ^2  
+    in  sideArea + 2 * topArea  
+```
+
+### Case expressions
+It's about taking a variable and then executing blocks of code for specific values of that variable and then maybe including a catch-all block of code in case the variable has some value for which we didn't set up a case. The syntax is:
+```
+case expression of pattern -> result  
+                   pattern -> result  
+                   pattern -> result  
+                   ...  
+```
+e.g.
+```haskell
+describeList :: [a] -> String  
+describeList xs = "The list is " ++ case xs of [] -> "empty."  
+                                               [x] -> "a singleton list."   
+                                               xs -> "a longer list."  
+```
 
