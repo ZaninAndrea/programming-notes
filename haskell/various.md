@@ -10,6 +10,11 @@ doubleMe x = x + x
 ```haskell
 92 `div` 10
 ```
+    - explicit typing: `functionName :: types` types has to be separated by `->` and the last type is the return type, whereas all the others are parameter types e.g.
+```haskell
+addThree :: Int -> Int -> Int -> Int  
+addThree x y z = x + y + z  
+```   
 - in the if statement the else is mandatory and is an expression, so it returns a value and you can use inside assignements
 ```haskell
 x = if x > 100  
@@ -55,4 +60,4 @@ x = if x > 100
      - **syntax**: elements are wrapped inside `()` and separated by commas e.g. `(1,2,3)`
      - `fst` and `snd` take a pair and return the first or second item
      - `zip list1 list2` takes two lists and returns a list of tuples pairing corresponding elements, the longer list gets cut off to match the length of the sorther one. e.g. `zip [1,2] ["a","b"]` returns `[(1,"a"),(2,"b")]`
-     - 
+- `:t var` to return _var_'s type
