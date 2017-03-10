@@ -1,0 +1,3 @@
+- `Time.deltaTime`: useful to make sure that the framerate doesn't change the speed
+- `Quaternion.Euler(x, y, z)` to create a Quaternion from x, y, z rotation values
+- to "add" the rotation amount of two Quaternions you have to multiply them
