@@ -11,6 +11,8 @@
 ## Unity
 * [Various](unity/various.md)
 
+## Haskell
+* [Various](haskell/various.md)
 
 
 
