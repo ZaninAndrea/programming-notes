@@ -1,63 +1,92 @@
-- boolean algebra: `&&`, `||`, `not`
-- equality and inequality: `==`, `/=`
-- strictly typed, but with type inference
-- declaring a function e.g.
-```haskell
-doubleMe x = x + x  
-```
-- function are called in a cli-like manner: function name followed by paramaters separated by a space, you can use parenthesis
-    - infix function: a function taking two parameters can be invoked writing the function name between the two parameters and surrounding his name in backticks 
-```haskell
-92 `div` 10
-```
-    - explicit typing: `functionName :: types` types has to be separated by `->` and the last type is the return type, whereas all the others are parameter types e.g.
-```haskell
-addThree :: Int -> Int -> Int -> Int  
-addThree x y z = x + y + z  
-```   
-- in the if statement the else is mandatory and is an expression, so it returns a value and you can use inside assignements
-```haskell
-x = if x > 100  
+# Haskell basics
+<!-- toc -->
+## Various
+* boolean algebra: `&&`, `||`, `not`
+* equality and inequality: `==`, `/=`
+* strictly typed, but with type inference
+* declaring a function e.g.
+  ```haskell
+  doubleMe x = x + x
+  ```
+* function are called in a cli-like manner: function name followed by paramaters separated by a space, you can use parenthesis
+  * infix function: a function taking two parameters can be invoked writing the function name between the two parameters and surrounding his name in backticks 
+    ```haskell
+    92 `div` 10
+    ```
+  * explicit typing: `functionName :: types` types has to be separated by `->` and the last type is the return type, whereas all the others are parameter types e.g.
+    ```haskell
+    addThree :: Int -> Int -> Int -> Int  
+    addThree x y z = x + y + z
+    ```
+* in the if statement the else is mandatory and is an expression, so it returns a value and you can use inside assignements
+  ```haskell
+  x = if x > 100  
     then x  
-    else x*2 
-```
-- lists
-    - contain items of the same type
-    - strings are lists
-    - `++` to append a list to another, needs to loop through all the list
-    - `item:list` to put an item at the beginning of the list, instantanious
-    - `list !! index` to retrieve an element from the list
-    - `head` function returns the first element
-    - `tail` function returns a list containing every element but the first
-    - `last` function returns the last element
-    - `init` function returns a list containing every element but the last
-    - `length` return list length
-    - `null` check if the list is empty
-    - `reverse` reverses a list
-    - `take x list` return a list containing the first _x_ items
-    - `drop x list` returns a list containig all the items but the first *x*
-    - `maximum` and `minimum` functions return the maximum value and the minimum value contained in the list
-        - works with string too using ascii
-    - `elem` function checks if the element is contained in the list, usually called like an inifix function 
-```haskell
-4 `elem` [3,4,5,6]
-``` 
-    - `[x..y]` returns a list of all the numbers between *x* and *y*, works with numbers, chars, also in reverse order (`[20..1]`)
-        - `[step, x..y]`: same as before, but every time increasing by *step*, works only with numbers
-        - you can use `[x..]` to create an infinite list
-    - `cycle list` takes a list and returns it repeated infinitely many time, use `take` when displaying
-    - `repeat elem` same as cycle, but with a single element
-- list comprehension
-    - `[outputFunction | inputSet]`, inputSet's expressions have to be separated by commas and can be conditions (`x /=5`) or predicates which draw elements from a list (`elem <- list`) e.g. _all numbers from 50 to 100 whose remainder when divided with the number 7 is 3_
- ```haskell
- [ x | x <- [50..100], x `mod` 7 == 3]  
- ```
-     - you can use `_` instead of a variable name if you will never use it e.g.
- ```haskell
- length' xs = sum [1 | _ <- xs] 
- ```
- - tuples: tuples are similar to lists, but their type depends on the number and the type of the  items they contain, so `(1,2)` and `(1,2,3)` have different types. Furthermore they can contain items of different type
-     - **syntax**: elements are wrapped inside `()` and separated by commas e.g. `(1,2,3)`
-     - `fst` and `snd` take a pair and return the first or second item
-     - `zip list1 list2` takes two lists and returns a list of tuples pairing corresponding elements, the longer list gets cut off to match the length of the sorther one. e.g. `zip [1,2] ["a","b"]` returns `[(1,"a"),(2,"b")]`
-- `:t var` to return _var_'s type
+    else x*2
+  ```
+* `:t var` to return _var_'s type
+* `Int` and `Integer` types both express numbers, but `Integer`is unbounded, so you can represent infinitely long integers. E.g. big factorials
+  ```haskell
+  factorial :: Integer -> Integer
+  factorial n = product [1..n]  
+  factorial 100
+  ```
+* type `Ordering` is a type that can have value `LT`,`GT`,`EQ` meaning greater than, lesser than and equal, respectively
+
+## Lists
+* contain items of the same type
+* strings are lists
+* `++` to append a list to another, needs to loop through all the list
+* `item:list` to put an item at the beginning of the list, instantanious
+* `list !! index` to retrieve an element from the list
+* `head` function returns the first element
+* `tail` function returns a list containing every element but the first
+* `last` function returns the last element
+* `init` function returns a list containing every element but the last
+* `length` return list length
+* `null` check if the list is empty
+* `reverse` reverses a list
+* `take x list` return a list containing the first _x_ items
+* `drop x list` returns a list containig all the items but the first _x_
+* `maximum` and `minimum` functions return the maximum value and the minimum value contained in the list
+  * works with string too using ascii
+* `elem` function checks if the element is contained in the list, usually called like an inifix function 
+  ```haskell
+  4 `elem` [3,4,5,6]
+  ```
+* `[x..y]` returns a list of all the numbers between _x_ and _y_, works with numbers, chars, also in reverse order \(`[20..1]`\)
+  * `repeat elem` same as cycle, but with a single element
+  * `cycle list` takes a list and returns it repeated infinitely many time, use `take` when displaying
+  * `[step, x..y]`: same as before, but every time increasing by _step_, works only with numbers
+    * you can use `[x..]` to create an infinite list
+### List comprehension
+* `[outputFunction | inputSet]`, inputSet's expressions have to be separated by commas and can be conditions \(`x /=5`\) or predicates which draw elements from a list \(`elem <- list`\) e.g. _all numbers from 50 to 100 whose remainder when divided with the number 7 is 3_
+    ```haskell
+    [ x | x <- [50..100], x `mod` 7 == 3]
+    ```
+
+* you can use `_` instead of a variable name if you will never use it e.g.
+      ```haskell
+      length' xs = sum [1 | _ <- xs]
+      ```
+## Tuples
+Tuples are similar to lists, but their type depends on the number and the type of the  items they contain, so `(1,2)` and `(1,2,3)` have different types. Furthermore they can contain items of different type
+* **syntax**: elements are wrapped inside `()` and separated by commas e.g. `(1,2,3)`
+* `fst` and `snd` take a pair and return the first or second item
+* `zip list1 list2` takes two lists and returns a list of tuples pairing corresponding elements, the longer list gets cut off to match the length of the sorther one. e.g. `zip [1,2] ["a","b"]` returns `[(1,"a"),(2,"b")]`
+
+## Typeclasses
+* typeclasses: A typeclass is a sort of interface that defines some behavior
+  * typeclass `Eq` supports equality operators `==` and `/=`
+  * typeclass `Ord` supports ordering `>`,`<`,`>=` and `<=`
+  * typeclass `Show` can be presented as a string
+  * typeclass `Read` can be parsed from a string, when used out of context gives error, so `read "4" + 2` works fine, but `read "4"` doesn't. You can use _explicit type annotations_ like this `read "4" :: Int` and it will work
+  * typeclass `Bounded` has upper and lower boundaries
+    * function `maxBound` and `minBound` return those boundaries e.g. `maxBound :: Int` evaluetes to `9223372036854775807`
+  * typeclass `Num` includes every type that can act as a number
+  * typeclass `Integral` includes every type that can act as an integer number: `Int` and `Integer`
+  * typeclass `Floating` includes every type that can act as a floating point number: `Float` and `Double`
+
+## Cool syntaxes
+
+
