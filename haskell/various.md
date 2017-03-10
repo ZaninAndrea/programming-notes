@@ -39,6 +39,20 @@ x = if x > 100
 ``` 
     - `[x..y]` returns a list of all the numbers between *x* and *y*, works with numbers, chars, also in reverse order (`[20..1]`)
         - `[step, x..y]`: same as before, but every time increasing by *step*, works only with numbers
+        - you can use `[x..]` to create an infinite list
     - `cycle list` takes a list and returns it repeated infinitely many time, use `take` when displaying
     - `repeat elem` same as cycle, but with a single element
-    
+- list comprehension
+    - `[outputFunction | inputSet]`, inputSet's expressions have to be separated by commas and can be conditions (`x /=5`) or predicates which draw elements from a list (`elem <- list`) e.g. _all numbers from 50 to 100 whose remainder when divided with the number 7 is 3_
+ ```haskell
+ [ x | x <- [50..100], x `mod` 7 == 3]  
+ ```
+     - you can use `_` instead of a variable name if you will never use it e.g.
+ ```haskell
+ length' xs = sum [1 | _ <- xs] 
+ ```
+ - tuples: tuples are similar to lists, but their type depends on the number and the type of the  items they contain, so `(1,2)` and `(1,2,3)` have different types. Furthermore they can contain items of different type
+     - **syntax**: elements are wrapped inside `()` and separated by commas e.g. `(1,2,3)`
+     - `fst` and `snd` take a pair and return the first or second item
+     - `zip list1 list2` takes two lists and returns a list of tuples pairing corresponding elements, the longer list gets cut off to match the length of the sorther one. e.g. `zip [1,2] ["a","b"]` returns `[(1,"a"),(2,"b")]`
+     - 
