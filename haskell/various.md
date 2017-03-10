@@ -59,6 +59,7 @@
   * `cycle list` takes a list and returns it repeated infinitely many time, use `take` when displaying
   * `[step, x..y]`: same as before, but every time increasing by _step_, works only with numbers
     * you can use `[x..]` to create an infinite list
+
 ### List comprehension
 * `[outputFunction | inputSet]`, inputSet's expressions have to be separated by commas and can be conditions \(`x /=5`\) or predicates which draw elements from a list \(`elem <- list`\) e.g. _all numbers from 50 to 100 whose remainder when divided with the number 7 is 3_
     ```haskell
@@ -69,6 +70,7 @@
       ```haskell
       length' xs = sum [1 | _ <- xs]
       ```
+      
 ## Tuples
 Tuples are similar to lists, but their type depends on the number and the type of the  items they contain, so `(1,2)` and `(1,2,3)` have different types. Furthermore they can contain items of different type
 * **syntax**: elements are wrapped inside `()` and separated by commas e.g. `(1,2,3)`
