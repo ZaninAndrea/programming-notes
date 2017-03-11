@@ -59,6 +59,10 @@
   * `cycle list` takes a list and returns it repeated infinitely many time, use `take` when displaying
   * `[step, x..y]`: same as before, but every time increasing by _step_, works only with numbers
     * you can use `[x..]` to create an infinite list
+* `map function list` returns a list where all the elements are replaced with the result of passing them to _function_ e.g. return a list with all the elements increased by one
+```haskell
+map (+1) [1..10]
+```
 
 ### List comprehension
 * `[outputFunction | inputSet]`, inputSet's expressions have to be separated by commas and can be conditions \(`x /=5`\) or predicates which draw elements from a list \(`elem <- list`\) e.g. _all numbers from 50 to 100 whose remainder when divided with the number 7 is 3_
@@ -111,6 +115,7 @@ capital :: String -> String
 capital "" = "Empty string, whoops!"  
 capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]  
 ```
+
 ### guards
 Guards are a way of testing whether some property of a value (or several of them) are true or false e.g.
 ```haskell
