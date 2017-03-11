@@ -63,7 +63,7 @@
 ```haskell
 map (+1) [1..10]
 ```
-
+* `filter predicate list`: return the list of elements that satisfied the predicate (a predicate is a function checking a condition and returning a boolean)
 ### List comprehension
 * `[outputFunction | inputSet]`, inputSet's expressions have to be separated by commas and can be conditions \(`x /=5`\) or predicates which draw elements from a list \(`elem <- list`\) e.g. _all numbers from 50 to 100 whose remainder when divided with the number 7 is 3_
     ```haskell
