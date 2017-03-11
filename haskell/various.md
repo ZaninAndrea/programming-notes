@@ -167,3 +167,11 @@ describeList xs = "The list is " ++ case xs of [] -> "empty."
                                                xs -> "a longer list."  
 ```
 
+## Lambdas
+Lambdas are anonymous function, generally passed to higher order functions
+To make a lambda we write `\` followed by the 
+parameters then a `->` and the function body
+e.g.
+```haskell
+oddNumbers = filter (\x -> x mod 2 /=0) [1..100]
+```
