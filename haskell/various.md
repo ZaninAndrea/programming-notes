@@ -57,8 +57,8 @@
 * `[x..y]` returns a list of all the numbers between _x_ and _y_, works with numbers, chars, also in reverse order \(`[20..1]`\)
   * `repeat elem` same as cycle, but with a single element
   * `cycle list` takes a list and returns it repeated infinitely many time, use `take` when displaying
-  * `[step, x..y]`: same as before, but every time increasing by _step_, works only with numbers
-    * you can use `[x..]` to create an infinite list
+  * `[a, b..z]`: same as before, but every time increasing by `b-a`, works only with numbers
+  * you can use `[x..]` to create an infinite list
 * `map function list` returns a list where all the elements are replaced with the result of passing them to _function_ e.g. return a list with all the elements increased by one
 ```haskell
 map (+1) [1..10]
