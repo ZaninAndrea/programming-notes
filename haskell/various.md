@@ -276,5 +276,9 @@ When exporting a module it's better to export types like this `Shape(..)` the `.
 
 We can also give names to the various parameters of a constructor we can use the record syntax
 ```haskell
-data Vehicle = Car {company :: String, model :: String} | Motorbike {company :: String, model :: String}  deriving (Show)  
+data Vehicle = Car {company :: String, model :: String} | Motorbike {company :: String, model :: String} 
+```
+In this case you can use an additional syntax to instantiate it:
+```haskell
+Car {company="Ford", model="Mustang"} 
 ```
