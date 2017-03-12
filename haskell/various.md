@@ -270,7 +270,7 @@ surface (Rectangle x1 y1 x2 y2) = (abs $ x2 - x1) * (abs $ y2 - y1)
 ```
 To make it part of typeclass use the keyword `derive`
 ```haskell
-data Shape = Circle Float Float Float | Rectangle Float Float Float Float deriving (Show)  
+data Shape = Circle Float Float Float | Rectangle Float Float Float Float deriving (Show, Eq)  
 ```
 When exporting a module it's better to export types like this `Shape(..)` the `..` make so that whoever imports the module can use any of the type constructors.
 
@@ -280,5 +280,15 @@ data Vehicle = Car {company :: String, model :: String} | Motorbike {company :: 
 ```
 In this case you can use an additional syntax to instantiate it:
 ```haskell
-Car {company="Ford", model="Mustang"} 
+Car "Ford" "Mustang" -- old syntax
+Car {company="Ford", model="Mustang"} -- new syntax
 ```
+
+You can also have type constructors, an example is the `Maybe` type
+```haskell
+data Maybe a = Nothing | Just a
+```
+The `a` is a type, so we can produce the types `Maybe Int`, `Maybe Char`, ...
+
+### Implementing existing typeclasses
+Deriving Eq the `==` function will check if the constructor and all the parameters of the 2 objects are the same
