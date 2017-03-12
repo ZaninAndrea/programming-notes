@@ -291,4 +291,10 @@ data Maybe a = Nothing | Just a
 The `a` is a type, so we can produce the types `Maybe Int`, `Maybe Char`, ...
 
 ### Implementing existing typeclasses
-Deriving Eq the `==` function will check if the constructor and all the parameters of the 2 objects are the same
+* Deriving `Eq` the `==` function will check if the constructor and all the parameters of the 2 objects are the same
+* Members of the `Enum` typeclass can be used when defining ranges
+```haskell
+data Day = Mon | Tue | Wed | Thu | Fri | Sat | Sun deriving (Eq, Ord, Show, Read, Bounded, Enum)  
+week = [Mon .. Sun]
+```
+
