@@ -298,3 +298,7 @@ data Day = Mon | Tue | Wed | Thu | Fri | Sat | Sun deriving (Eq, Ord, Show, Read
 week = [Mon .. Sun]
 ```
 
+### Other
+* we can create type synonyms using the keywork `type`, here's the definition of String: `type String = [Char]`
+* the Either type `data Either a b = Left a | Right b deriving (Eq, Ord, Read, Show)` is often used as return type for functions that can fail in many ways, so that you can return the rror string through Left or the response through Right, even though the response may be of some other type than string
+* you can create recursive data-types
