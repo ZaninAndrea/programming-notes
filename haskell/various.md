@@ -36,7 +36,7 @@
 ## Lists
 * contain items of the same type
 * strings are lists
-* `++` to append a list to another, needs to loop through all the list
+* `++` to append a list to another, needs to loop through all the list, it's much more expensive than `:`
 * `item:list` to put an item at the beginning of the list, instantanious
 * `list !! index` to retrieve an element from the list
 * `head` function returns the first element
@@ -63,7 +63,9 @@
 ```haskell
 map (+1) [1..10]
 ```
-* `filter predicate list`: return the list of elements that satisfied the predicate (a predicate is a function checking a condition and returning a boolean)
+* `filter predicate list`: return the list of elements that satisfied the predicate (a predicate is a function checking a condition and returning a boolean). Filter doesn't work on infinite lists
+* `takeWhile predicate list` returns a list with all the elements up to the one that didn't satisfy the predicate, then stops. Works with infinite lists too
+ 
 ### List comprehension
 * `[outputFunction | inputSet]`, inputSet's expressions have to be separated by commas and can be conditions \(`x /=5`\) or predicates which draw elements from a list \(`elem <- list`\) e.g. _all numbers from 50 to 100 whose remainder when divided with the number 7 is 3_
     ```haskell
@@ -176,3 +178,43 @@ e.g.
 oddNumbers = filter (\x -> x mod 2 /=0) [1..100]
 ```
 
+## Fold
+The function `foldl function accumulator array` take a binary function (2 input one output) an accumulator and an array, then it "folds" the array passing the pair accumulator first value of the array to the function and replacing the accumulator with the result, then repeats the process with the next item, until the array has ended and we have only one value. The `foldl` folds the elements starting from left and going to right
+e.g.recreating the sum function
+```haskell
+sum' xs= foldl (+) 0 xs
+```
+
+- `foldr` is the same as `foldl`, but folds from right to left
+- `foldl1` and `foldr1` work the same as their counterparts, but don't take any accumulator, they use the first or last value of the array as accumulator and start applying the function with the next one
+- `scanl` and `scanr` work as their fold counterparts, but store evry accumulator state in an array and then return that array. In `scanl` the first value of the accumulator is the first in the array, while in `scanr` is the last one. E.g. `scanl (+) 0 [3,5,2,1]` returns `[0,3,8,10,11]`
+
+## Function application with $
+The `$` function has the lowest precedence and is right-associative
+```haskell
+($) :: (a -> b) -> a -> b  
+f $ x = f x  
+```
+It's commonly used to avoid using many parenthesis. E.g. `sum (map sqrt [1..130])` has the same result as ` sum $ map sqrt [1..130]`, but clearer to read
+
+Given that `$`, as all functions, can be curried we can use it to pass the same parameter to a list of functions
+E.g. 
+```haskell
+ghci> map ($ 3) [(4+), (10*), (^2), sqrt]  
+[7.0,30.0,9.0,1.7320508075688772]  
+```
+
+## Function composition
+In math function composition is defined like this : $$(f \circ g)(x) = f(g(x))$$
+In haskell it works pretty much the same: we use the `.` function, which is defined like this:
+```haskell
+    (.) :: (b -> c) -> (a -> b) -> a -> c  
+    f . g = \x -> f (g x)  
+```
+Function composition is right-associative, so `f(g(z x))`=`(f . g . z) x`
+
+## Modules
+To import a module just use `import <module name>`, this has to be done before defining any function.
+- you can import only some functions like this `import Data.List (nub, sort)`
+- you can import the module except some functions we can do this `import Data.List hiding (nub, sort)`
+- you can import a module as `qualified` meaning that you'll have to use it's name to recall his functions. E.g. `import qualified Data.Map` and then use `Data.Map.filter`, or `import qualified Data.Map as M` and then use `M.filter`
