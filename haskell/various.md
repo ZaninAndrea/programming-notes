@@ -251,3 +251,30 @@ To create a module first you specify the name and all the functions you want to 
     rectangleArea :: Float -> Float -> Float  
     rectangleArea a b = a * b  
 ```
+
+## Creating types and typeclasses
+We can define a data type with the keyboard `data` for example `Bool` is deifned like this:
+```haskell
+data Bool = False | True 
+```
+The `|` has to be read as and _or_
+We could also define various constructors , like this
+```haskell
+data Shape = Circle Float Float Float | Rectangle Float Float Float Float  
+```
+When creating a function that deals with this kind of types we have to consider all the constructors, like this:
+```haskell
+surface :: Shape -> Float  
+surface (Circle _ _ r) = pi * r ^ 2  
+surface (Rectangle x1 y1 x2 y2) = (abs $ x2 - x1) * (abs $ y2 - y1)  
+```
+To make it part of typeclass use the keyword `derive`
+```haskell
+data Shape = Circle Float Float Float | Rectangle Float Float Float Float deriving (Show)  
+```
+When exporting a module it's better to export types like this `Shape(..)` the `..` make so that whoever imports the module can use any of the type constructors.
+
+We can also give names to the various parameters of a constructor we can use the record syntax
+```haskell
+data Vehicle = Car {company :: String, model :: String} | Motorbike {company :: String, model :: String}  deriving (Show)  
+```
