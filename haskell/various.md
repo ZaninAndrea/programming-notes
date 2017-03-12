@@ -218,3 +218,36 @@ To import a module just use `import <module name>`, this has to be done before d
 - you can import only some functions like this `import Data.List (nub, sort)`
 - you can import the module except some functions we can do this `import Data.List hiding (nub, sort)`
 - you can import a module as `qualified` meaning that you'll have to use it's name to recall his functions. E.g. `import qualified Data.Map` and then use `Data.Map.filter`, or `import qualified Data.Map as M` and then use `M.filter`
+
+To create a module first you specify the name and all the functions you want to export, than you deifne the functions, like this
+```haskell
+    module Geometry  
+    ( sphereVolume  
+    , sphereArea  
+    , cubeVolume  
+    , cubeArea  
+    , cuboidArea  
+    , cuboidVolume  
+    ) where  
+      
+    sphereVolume :: Float -> Float  
+    sphereVolume radius = (4.0 / 3.0) * pi * (radius ^ 3)  
+      
+    sphereArea :: Float -> Float  
+    sphereArea radius = 4 * pi * (radius ^ 2)  
+      
+    cubeVolume :: Float -> Float  
+    cubeVolume side = cuboidVolume side side side  
+      
+    cubeArea :: Float -> Float  
+    cubeArea side = cuboidArea side side side  
+      
+    cuboidVolume :: Float -> Float -> Float -> Float  
+    cuboidVolume a b c = rectangleArea a b * c  
+      
+    cuboidArea :: Float -> Float -> Float -> Float  
+    cuboidArea a b c = rectangleArea a b * 2 + rectangleArea a c * 2 + rectangleArea c b * 2  
+      
+    rectangleArea :: Float -> Float -> Float  
+    rectangleArea a b = a * b  
+```
