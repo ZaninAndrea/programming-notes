@@ -1,5 +1,4 @@
 # Chapter 1
-<!-- toc -->
 ## Choosing a distro
 There are 3 main distro families:
 * Fedora
