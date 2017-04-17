@@ -15,6 +15,7 @@
 * [Various](haskell/various.md)
 
 ##  Introduction to Linux
-* [Chapter 01](linuxintro/chapter1.md)
-* [Chapter 02](linuxintro/chapter2.md)
-* [Chapter 03](linuxintro/chapter3.md)
+* [Chapter 01: The Linux Foundation](linuxintro/chapter1.md)
+* [Chapter 02: Linux Philosophy and concepts](linuxintro/chapter2.md)
+* [Chapter 03: Linux basics and system startup](linuxintro/chapter3.md)
+* [Chapter 04: Graphical Interface](linuxintro/chapter4.md)
