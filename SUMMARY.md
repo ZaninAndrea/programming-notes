@@ -19,3 +19,4 @@
 * [Chapter 02: Linux Philosophy and concepts](linuxintro/chapter2.md)
 * [Chapter 03: Linux basics and system startup](linuxintro/chapter3.md)
 * [Chapter 04: Graphical Interface](linuxintro/chapter4.md)
+* [Chapter 05: System configuration from GUI](linuxintro/chapter5.md)
