@@ -16,4 +16,5 @@
 
 ##  Introduction to Linux
 * [Chapter 01](linuxintro/chapter1.md)
+* [Chapter 02](linuxintro/chapter2.md)
 
