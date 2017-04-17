@@ -14,5 +14,6 @@
 ## Haskell
 * [Various](haskell/various.md)
 
-
+##  Introduction to Linux
+* [Chapter 01](linuxintro/chapter1.md)
 
