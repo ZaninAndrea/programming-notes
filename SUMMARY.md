@@ -21,3 +21,4 @@
 * [Chapter 04: Graphical Interface](linuxintro/chapter4.md)
 * [Chapter 05: System configuration from GUI](linuxintro/chapter5.md)
 * [Chapter 07: Command line operations](linuxintro/chapter7.md)
+* [Chapter 09: Process](linuxintro/chapter9.md)
