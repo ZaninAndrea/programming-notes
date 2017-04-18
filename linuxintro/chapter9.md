@@ -35,3 +35,14 @@ The load average has a scale from 0 to the number of cores. E.g. on a quadcore s
 * `jobs -l` to show all background processes
 * `fg` and `bg` to move processes to foreground or background
 
+## Listing processes
+* `pf` shows the currently running processes (by deafult only in the shell)
+    * `ps -ef` all the processes in the system
+    * `ps -u` to show user details
+    * `ps -eLf` display info about every thread
+    * `ps aux` shows every process of every user
+    * `ps axo <attributes>` allows you to choose which attributes to display. E.g. `ps axo stat,priority,pid,pcpu,comm` 
+* `top` does the same as `pf`, but auto-refreshes the list
+
+
+
