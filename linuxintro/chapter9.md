@@ -42,7 +42,24 @@ The load average has a scale from 0 to the number of cores. E.g. on a quadcore s
     * `ps -eLf` display info about every thread
     * `ps aux` shows every process of every user
     * `ps axo <attributes>` allows you to choose which attributes to display. E.g. `ps axo stat,priority,pid,pcpu,comm` 
-* `top` does the same as `pf`, but auto-refreshes the list
+* `pstree` displays a tree of the processes
+* `top` shows the processes ad useful stats about the system, also auto-refreshes the list
+    * type A while top is running to sort the process by top resource consumers
 
+## Starting processes in the future
+You can use the `at` utility to plan a task: `at <time>`, then type your task and when you finished press CTRL+D to exit.
 
+To plan routine task use the `crontab -e` utility, which allows you to plan repetitibe tasks. The require fields are
 
+| Field | Description | Values |
+|---|---|---|
+|MIN|Minutes|0 to 59|
+|HOUR|Hour field|0 to 23|
+|DOM|Day of Month|1-31|
+|MON|Month field|1-12|
+|DOW|Day Of Week|0-6 (0 = Sunday)|
+|CMD|Command|Any command to be executed|
+
+E.g. The entry `30 08 10 06 * /home/sysadmin/full-backup` will schedule a full-backup at 8.30am, 10-June, irrespective of the day of the week.
+
+`sleep <time>` suspends the execution for the specified amount of time. You may use the suffixes s,m,h,d (seconds, minutes, hours, days)
