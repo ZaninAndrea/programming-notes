@@ -25,5 +25,5 @@
 Declaring the functions at the top of the code allows you toinvoke a function from another one implemented upper in the code.
 To declare a function without inputs write `void` in place of the argument list
 
-## Schort: Variables and Scope
+## Short: Variables and Scope
 Global variables are useful, because they are **passed by value** to methods, instead that passing a copy.
