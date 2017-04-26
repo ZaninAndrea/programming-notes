@@ -3,7 +3,6 @@
 ## Python ML - Sebastian Raschka
 * [Chapter 3](pythonML-raschka/chapter3.md)
 
-
 ## CS50 - Harvard
 * [Week 1](cs50/week1.md)
 * [Week 2](cs50/week2.md)
@@ -21,3 +20,7 @@
 * [Chapter 04: Graphical Interface](linuxintro/chapter4.md)
 * [Chapter 05: System configuration from GUI](linuxintro/chapter5.md)
 * [Chapter 07: Command line operations](linuxintro/chapter7.md)
+
+## How to design programs
+* [notes](design_programs/notes.md)
+
