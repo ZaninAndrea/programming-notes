@@ -22,3 +22,6 @@
 * [Chapter 05: System configuration from GUI](linuxintro/chapter5.md)
 * [Chapter 07: Command line operations](linuxintro/chapter7.md)
 * [Chapter 09: Process](linuxintro/chapter9.md)
+
+## How to design programs
+* [notes](design_programs/notes.md)
