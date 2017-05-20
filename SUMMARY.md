@@ -26,3 +26,6 @@
 
 ## How to design programs
 * [notes](design_programs/notes.md)
+
+## The mythical man month
+* [Chapter 1: The Tar Pit](mythicalman/chp1.md)
