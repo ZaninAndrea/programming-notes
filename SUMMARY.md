@@ -42,3 +42,5 @@
 
 * [cryptography](computer-science/cryptography.md)
 
+## Algorithms
+
