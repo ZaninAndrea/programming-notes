@@ -44,5 +44,5 @@
 
 ## Algorithms
 
-* Various
+* [Various](algorithms/various.md)
 
