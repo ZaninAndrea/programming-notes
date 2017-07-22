@@ -44,3 +44,5 @@
 
 ## Algorithms
 
+* Various
+
