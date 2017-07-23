@@ -42,7 +42,7 @@
 
 * [cryptography](computer-science/cryptography.md)
 
-## Algorithms
+## Algorithms Princeton
 
 * [Various](algorithms/various.md)
 

@@ -17,3 +17,9 @@ We represent the forest as an array whose entries are the parent of the element 
 
 - find: check if the 2 elements have the same root
 - union: set one element's parent to the other element's root
+
+#### Improvements
+- weighting: always connect the smallest tree to the root of the tallest
+- flattening the tree
+
+### Applications
